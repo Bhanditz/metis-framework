@@ -11,7 +11,7 @@ import eu.europeana.enrichment.api.external.model.zoho.ZohoOrganization;
 import eu.europeana.enrichment.api.internal.OrganizationTermList;
 import eu.europeana.enrichment.service.EntityService;
 import eu.europeana.enrichment.service.exception.ZohoAccessException;
-import eu.europeana.metis.authentication.dao.ZohoApiFields;
+import eu.europeana.metis.zoho.ZohoApiFields;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;

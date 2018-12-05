@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import eu.europeana.corelib.definitions.edm.entity.Organization;
 import eu.europeana.enrichment.api.external.model.zoho.ZohoOrganization;
 import eu.europeana.enrichment.service.exception.ZohoAccessException;
-import eu.europeana.metis.authentication.dao.ZohoApiFields;
+import eu.europeana.metis.zoho.ZohoApiFields;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;

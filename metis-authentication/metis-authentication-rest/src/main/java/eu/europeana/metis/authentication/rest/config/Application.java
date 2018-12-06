@@ -1,6 +1,7 @@
 package eu.europeana.metis.authentication.rest.config;
 
 import eu.europeana.metis.authentication.dao.PsqlMetisUserDao;
+import eu.europeana.metis.authentication.dao.ZohoAccessClient;
 import eu.europeana.metis.authentication.service.AuthenticationService;
 import eu.europeana.metis.authentication.user.MetisUser;
 import eu.europeana.metis.authentication.user.MetisUserAccessToken;
@@ -73,10 +74,15 @@ public class Application implements WebMvcConfigurer, InitializingBean {
   }
 
   @Bean
-  public AuthenticationService getAuthenticationService(PsqlMetisUserDao psqlMetisUserDao)
-      throws Exception {
-    authenticationService = new AuthenticationService(psqlMetisUserDao);
+  public AuthenticationService getAuthenticationService(PsqlMetisUserDao psqlMetisUserDao,
+      ZohoAccessClient zohoAccessClient) {
+    authenticationService = new AuthenticationService(psqlMetisUserDao, zohoAccessClient);
     return authenticationService;
+  }
+
+  @Bean
+  public ZohoAccessClient getZohoAccessClient() throws Exception {
+    return new ZohoAccessClient();
   }
 
   @Bean

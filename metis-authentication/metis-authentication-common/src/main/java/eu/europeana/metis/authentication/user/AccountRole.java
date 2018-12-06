@@ -19,8 +19,12 @@ public enum AccountRole {
    */
   @JsonCreator
   public static AccountRole getAccountRoleFromEnumName(String name) throws BadContentException {
-    for (AccountRole acountRole: AccountRole.values()) {
-      if(acountRole.name().equalsIgnoreCase(name)){
+    if (name == null) {
+      throw new BadContentException("Account Role is not valid");
+    }
+
+    for (AccountRole acountRole : AccountRole.values()) {
+      if (acountRole.name().equalsIgnoreCase(name)) {
         return acountRole;
       }
     }
